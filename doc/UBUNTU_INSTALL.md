@@ -25,6 +25,7 @@ sudo apt install cmake gcc pkg-config
 sudo apt install libncurses5-dev libncursesw5-dev
 sudo apt install zlib1g-dev libbz2-dev liblzma-dev
 sudo apt install libcunit1-dev groff
+sudo apt install libbsd-dev
 ```
 
 Additionally, install `cogapp` using `pipx` (a Python tool for installing applications in isolated environments). If you don’t have `pipx` installed, you can install it first with `sudo apt install pipx`.

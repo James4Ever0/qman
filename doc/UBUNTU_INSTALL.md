@@ -35,34 +35,13 @@ pipx install cogapp
 
 > **Note:** Ensure `pipx` is in your PATH. If the `pipx` command is not found, add `~/.local/bin` to your PATH or log out and back in.
 
-## 3. Modify the Meson build configuration
-
-The default Meson options may need to be adjusted. In particular, we want to explicitly enable `libbsd`. Edit the file `meson_options.txt` in the qman source directory.
-
-Open the file with your preferred text editor, for example:
-
-```bash
-nano meson_options.txt
-```
-
-Locate the option for `libbsd` and change it to look like this:
-
-```meson
-option('libbsd',
-  type: 'feature',
-  value: 'enabled',
-  description: 'Use libbsd-overlay'
-)
-```
-
-Save the file and exit the editor.
-
-## 4. Build and install qman with Meson
+## 3. Build and install qman with Meson
 
 Now configure the build directory, compile, and install.
 
 ```bash
-meson setup build/
+# enable libbsd to ensure compatibility
+meson setup build/ -Dlibbsd=enabled
 cd build
 meson compile
 sudo meson install
